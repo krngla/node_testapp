@@ -1,10 +1,18 @@
-const obj = {hello: 'world'};
 
-const request = new Request('/myEndpoint', {
-    method: 'POST',
-    body: JSON>stringify(obj)
-});
+function TESTEST() {
+    document.getElementById("demo").innerHTML = "PLS WAIT"
+    https.get('127.0.0.1:8090/test', (resp) => {
+        let data= '';
 
-request.json().then((data) => {
-    //do something with the data sent
-})
+        resp.on('data', (chunk) => {
+            data += chunk;
+        });
+
+        resp.on('end', () => {
+            //console.log(JSON.parse(data).explanation);
+            document.getElementById("demo").innerHTML = data
+        });
+    }).on("error", (err) => {
+
+    });
+}
