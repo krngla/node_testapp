@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+         <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+         <meta
+            https-equiv="Content-Security-Policy"
+            content="default-src 'self'; script-src 'self'"
+        />
+        <meta
+            http-equiv="X-Content-Sequrity-Policy"
+            content="default-src 'self'; script-src 'self'"
+        />
+        <title>Hello from Electron renderer!</title> 
+    </head>
+    <body>
+        <script src="button.js"></script>
+        <p id="demo">A Paragraph</p>
+        <h1>Hello from Electron renderer!</h1>
+        <p>👋</p>
+        <button type="button" onclick="myFunction()">Try it</button>
+        
+    </body>
+</html>

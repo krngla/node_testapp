@@ -1,0 +1,14 @@
+{
+    "name": "electron_frontend",
+    "version": "1.0.0",
+    "description": "to be integrated with a go backend",
+    "main": "main.js",
+    "author": "Are Nikolai Jevne",
+    "license": "MIT",
+    "scripts": {
+        "start": "electron ."
+    },
+    "devDependencies": {
+        "electron": "^19.0.0"
+    }
+}
