@@ -1,5 +1,5 @@
 const { app, BrowserWindow } = require('electron')
-const https = require('https');
+console.log("Hello, world")
 const createWindow = () => {
     const win = new BrowserWindow({
         width: 800,
@@ -20,3 +20,6 @@ app.whenReady().then(() => {
 app.on('window-all-closed', ()=> {
     if (process.platform !== 'darwin') app.quit()
 })
+
+
+console.log("Hello, world")
