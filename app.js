@@ -1,4 +1,4 @@
-const socket = new WebSocket('ws://localhost:8080')
+/*const socket = new WebSocket('ws://localhost:8080')
 
 socket.addEventListener('open', (event) => {
     socket.send('Data');
@@ -16,4 +16,12 @@ form.addEventListener('submit', (e) => {
     text.value = ""
     console.log(e.data)
 });
+*/
 
+var test = {"Hello":"World"}
+
+fetch("http://localhost:8080/hello").then(function (response) {
+    var rsp = response.text();
+    console.log(rsp)
+    return rsp
+});

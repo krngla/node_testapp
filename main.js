@@ -28,7 +28,7 @@ app.whenReady().then(() => {
 app.on('window-all-closed', ()=> {
     if (process.platform !== 'darwin') app.quit()
 })
-
+/*
 const wss = new WebSocketServer({port: 8080});
 
 wss.on('connection', function connection(ws) {
@@ -38,3 +38,4 @@ wss.on('connection', function connection(ws) {
 
     ws.send('something');
 });
+*/
