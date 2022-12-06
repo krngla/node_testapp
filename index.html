@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="stylesheet.css">
     <head>
         <meta charset="UTF-8" />
          <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
@@ -12,14 +13,24 @@
             content="default-src 'self'; script-src 'self'"
         />
         <title>Hello from Electron renderer!</title> 
+        
+
     </head>
     <body>
-        <script src="button.js"></script>
-        <script type="module" src="interface.js"></script>
-        <p id="demo">A Paragraph</p>
-        <h1>Hello from Electron renderer!</h1>
-        <p>👋</p>
-        <button type="button" onclick="myFunction()">Try it</button>
-        
+        <div class="container">
+            <div class="div-sidebar" id="sidebar"></div>
+            <div class="div-content">
+                <h1>Hello from Electron renderer!</h1>
+                <hr width="608px" color="orange">
+                <form id="myForm">
+                    <input type="text" id="lol" autofocus>
+                </form>
+                <p id="demo">This is some text in a div</p>
+                <div id="responses"></div>
+                <script src="app.js" defer></script>
+                <script src="button.js" defer></script>
+                <script src="fill.js" defer></script>
+            </div>
+        </div>
     </body>
 </html>
