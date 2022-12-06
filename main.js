@@ -1,6 +1,6 @@
 const { app, BrowserWindow } = require('electron')
 
-const {WebSocketServer} = require('ws');
+//const {WebSocketServer} = require('ws');
 
 const createWindow = () => {
     const win = new BrowserWindow({

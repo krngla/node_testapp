@@ -10,7 +10,6 @@
     },
     "dependencies": {
         "ajax": "^0.0.4",
-        "electron": "^22.0.0",
-        "ws": "^8.11.0"
+        "electron": "^22.0.0"
     }
 }

@@ -25,3 +25,14 @@ fetch("http://localhost:8080/hello").then(function (response) {
     console.log(rsp)
     return rsp
 });
+
+fetch("http://localhost:8080/api", {
+    method: 'POST',
+    headers: {},
+    body: JSON.stringify({
+        "hello" : "world"
+    })}).then(function (response) {
+        var rsp = response.text();
+        console.log(rsp);
+        return rsp;
+})
