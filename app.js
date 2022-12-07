@@ -20,18 +20,46 @@ form.addEventListener('submit', (e) => {
 
 var test = {"Hello":"World"}
 
-fetch("http://localhost:8080/hello").then(function (response) {
+fetch("http://localhost:8080").then(function (response) {
     var rsp = response.text();
     console.log(rsp)
     return rsp
 });
+const data = new URLSearchParams()
 
-fetch("http://localhost:8080/api", {
+data.append("username", "user2")
+data.append("password", "password")
+
+
+fetch("http://localhost:8080/register", {
     method: 'POST',
-    headers: {},
-    body: JSON.stringify({
-        "hello" : "world"
-    })}).then(function (response) {
+    headers: {
+        "Content-Type": 'application/x-www-form-urlencoded'
+    },
+    body: data
+    }).then(function (response) {
+        var rsp = response.text();
+        console.log(rsp);
+        return rsp;
+})
+
+fetch("http://localhost:8080/login", {
+    method: 'POST',
+    headers: {
+        "Content-Type": 'application/x-www-form-urlencoded'
+    },
+    body: data
+    }).then(function (response) {
+        var rsp = response.text();
+        console.log(rsp);
+        return rsp;
+})
+
+
+fetch("http://localhost:8080/logout", {
+    method: 'GET',
+    headers: {}
+    }).then(function (response) {
         var rsp = response.text();
         console.log(rsp);
         return rsp;
