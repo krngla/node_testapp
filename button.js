@@ -19,7 +19,7 @@ function make_button(str, func) {
     }
     btn.id = make_button.i++
     btn.addEventListener("click", function() {
-        func(btn)
+        func()
     });
     document.getElementById("sidebar").appendChild(btn);
 }

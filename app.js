@@ -31,7 +31,8 @@ data.append("username", "user2")
 data.append("password", "password")
 
 
-fetch("http://localhost:8080/register", {
+function UserRegister() {
+    fetch("http://localhost:8080/register", {
     method: 'POST',
     headers: {
         "Content-Type": 'application/x-www-form-urlencoded'
@@ -40,27 +41,43 @@ fetch("http://localhost:8080/register", {
     }).then(function (response) {
         var rsp = response.text();
         console.log(rsp);
+        printAnswer(rsp);
         return rsp;
-})
+    })
+}
 
-fetch("http://localhost:8080/login", {
-    method: 'POST',
-    headers: {
-        "Content-Type": 'application/x-www-form-urlencoded'
-    },
-    body: data
-    }).then(function (response) {
-        var rsp = response.text();
-        console.log(rsp);
-        return rsp;
-})
+function UserLogin() {
+    fetch("http://localhost:8080/login", {
+        method: 'POST',
+        headers: {
+            "Content-Type": 'application/x-www-form-urlencoded'
+        },
+        body: data
+        }).then(function (response) {
+            var rsp = response.text();
+            var bdy = response.statusText;
+            console.log(rsp);
+            return rsp;
+    }).then(function (data) {
+
+        printAnswer(data);
+    })
+}
 
 
-fetch("http://localhost:8080/logout", {
-    method: 'GET',
-    headers: {}
-    }).then(function (response) {
-        var rsp = response.text();
-        console.log(rsp);
-        return rsp;
-})
+function UserLogout() {
+    fetch("http://localhost:8080/logout", {
+        method: 'GET',
+        headers: {}
+        }).then(function (response) {
+            var rsp = response.text();
+            return rsp;
+    }).then(function(data) {
+        printAnswer(data);
+        printAnswer(JSON.parse(data)["test"]);
+    });
+}
+
+function printAnswer(string) {
+    load_text("responses", string)
+}
